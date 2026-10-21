@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #10141f;
+    color: #f3f4f6;
+}
+
+.play-page {
+    min-height: 80vh;
+    padding: 35px 20px;
+    background:
+        radial-gradient(ellipse at top left, #263b67 0, transparent 45%),
+        #10141f;
+}
+
+.topbar {
+    max-width: 1050px;
+    margin: 0 auto 25px;
+    color: #9da9bd;
+    font-size: 14px;
+}
+
+.topbar a {
+    color: #a9c7ff;
+    text-decoration: none;
+}
+
+.game-panel {
+    max-width: 1050px;
+    margin: auto;
+    overflow: hidden;
+    background: #1a2232;
+    border: 1px solid #303d55;
+    border-radius: 16px;
+    box-shadow: 0 18px 50px #0008;
+}
+
+.game-art {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+
+.game-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.game-art::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(26,34,50,1),
+        rgba(26,34,50,0.1)
+    );
+}
+
+.game-info {
+    padding: 35px;
+}
+
+.label {
+    color: #8eafff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.game-info h1 {
+    margin: 12px 0 18px;
+    font-size: 42px;
+}
+
+.status {
+    display: inline-block;
+    margin: 0 0 20px;
+    padding: 8px 14px;
+    color: #b9f6d0;
+    background: #173e31;
+    border: 1px solid #28674e;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.size {
+    color: #bdc7d7;
+    margin: 18px 0;
+    font-size: 18px;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 7px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.12);
+}
+
+.button-main {
+    background: #3478f6;
+}
+
+.button-danger {
+    color: #ffc1c1;
+    background: #482a35;
+}
+
+.success {
+    margin-top: 18px;
+    color: #8ff0b4;
+}
+
+@media (max-width: 700px) {
+
+    .game-art {
+        height: 200px;
+    }
+
+    .game-info {
+        padding: 25px;
+    }
+
+    .game-info h1 {
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,39 @@
+.user-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 4%;
+    color: #e8edf7;
+    background: #171e2b;
+    border-bottom: 1px solid #303d55;
+}
+
+.user-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.user-info span {
+    color: #9da9bd;
+}
+
+.logout-link {
+    padding: 8px 12px;
+    color: #d7e4ff;
+    background: #263653;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.logout-link:hover {
+    background: #3478f6;
+}
+
+@media (max-width: 500px) {
+    .user-bar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
