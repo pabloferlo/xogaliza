@@ -5,7 +5,6 @@ include "connection.php";
 $id_juego = $_GET['id'];
 $nombreusu = $_SESSION['nombreusu'];
 
-// Buscamos el nombre para mostrarlo en la pantalla.
 $sql = "SELECT nombre
         FROM juegos
         WHERE id_juego = :id_juego";
@@ -40,7 +39,6 @@ echo '
             <p class="install-time">La desinstalación tardará unos segundos.</p>
 ';
 
-// Intentamos mostrar la pantalla antes de esperar.
 if (ob_get_level() > 0) {
     ob_flush();
 }
@@ -48,7 +46,6 @@ flush();
 
 sleep(5);
 
-// Cambiamos el estado del juego en la base de datos.
 $sql = "UPDATE usuarios_juegos
         SET estado = 'no_instalado'
         WHERE id_usuario = (
