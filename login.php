@@ -1,8 +1,7 @@
 <?php
 session_start();
 include "connection.php"; // conexión a la BD
-
-// Si el formulario se envió
+ó
 if (isset(($_POST["btn_entrar"]))) {
     $nombreusu = $_POST["nombreusu"];
     $contrasena = $_POST["contrasena"];
@@ -26,7 +25,6 @@ if (isset(($_POST["btn_entrar"]))) {
     }
 }
 
-// REGISTRO
 if (isset($_POST["btn_registrar"])) {
 $nombreusu = $_POST["nombreusu"];
 $contrasena = $_POST["contrasena"];
