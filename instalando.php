@@ -5,7 +5,6 @@ include "connection.php";
 $id_juego = $_GET['id'];
 $nombreusu = $_SESSION['nombreusu'];
 
-// Buscamos el nombre para mostrarlo en la pantalla.
 $sql = "SELECT nombre
         FROM juegos
         WHERE id_juego = :id_juego";
@@ -16,7 +15,6 @@ $stmt->execute([
 ]);
 $juego = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Mostramos la pantalla de instalación.
 echo '
 <!DOCTYPE html>
 <html lang="es">
@@ -40,7 +38,6 @@ echo '
             <p class="install-time">La instalación tardará unos segundos.</p>
 ';
 
-// Intentamos que el navegador muestre la pantalla antes de esperar.
 if (ob_get_level() > 0) {
     ob_flush();
 }
@@ -48,7 +45,6 @@ flush();
 
 sleep(5);
 
-// Cambiamos el estado del juego en la base de datos.
 $sql = "UPDATE usuarios_juegos
         SET estado = 'instalado'
         WHERE id_usuario = (
